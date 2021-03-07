@@ -1,0 +1,62 @@
+<head>
+    <title>Produto: {{product.name}}</title>
+</head>
+
+<body>
+    <h1>{{product.name}}</h1>
+    <p>
+        preço: {{product.price}}
+    </p>
+    <p>
+        <a href="#"><button>ir direto para a compra</button></a>
+    </p>
+
+    <p>
+        descrição: {{product.description}}
+    </p>
+
+    <p>
+        <a href="#"><button>ir direto para a compra</button></a>
+    </p>
+
+    <p>
+        especificações:
+    </p>
+
+    <table>
+        <tbody>
+            {% for key, value in product.specifications.items()%}
+
+            <tr>
+                <td>{{key}}</td>
+                <td>{{value}}</td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table> <br>
+
+    <p>
+
+        <a href="#"><button>ir para a compra</button></a> <br><br>
+    </p>
+
+</body>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background-color: yellow;
+        color: black;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .product-name {
+        font-size: 1.3 rem;
+    }
+</style>
