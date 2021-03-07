@@ -1,0 +1,34 @@
+<head>
+    <title>Catálogo acessível</title>
+</head>
+
+<body>
+    <h1>Catálogo de móveis do site Americanas</h1>
+
+
+
+
+    id: {{product.product_id}} <br>
+    nome: {{product.name}} <br>
+    descrição: {{product.description}} <br> <br>
+    especificação: <table>{{product.specifications|safe}}</table> <br>
+    preço: {{product.price}} <br>
+</body>
+
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background-color: yellow;
+        color: black;
+    }
+
+    h1{
+        font-size: 2.5rem;
+    }
+
+    .product-name{
+        font-size: 1.3 rem;
+    }
+</style>
