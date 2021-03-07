@@ -9,6 +9,7 @@ class AmericanasProductSpider(scrapy.Spider):
     def __init__(self, product_id, **kwargs):
         self.start_urls = [f'https://www.americanas.com.br/produto/{product_id}']
         self.product_id = product_id
+        print(self.start_urls)
         super().__init__(**kwargs)
 
     def parse(self, response):
