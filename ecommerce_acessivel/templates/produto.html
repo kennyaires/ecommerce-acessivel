@@ -1,22 +1,50 @@
 <head>
-    <title>Catálogo acessível</title>
+    <title>Produto: {{product.name}}</title>
 </head>
 
 <body>
-    <h1>Catálogo de móveis do site Americanas</h1>
+    <h1>{{product.name}}</h1>
+    <p>
+        preço: {{product.price}}
+    </p>
+    <p>
+        <a href="#"><button>ir direto para a compra</button></a>
+    </p>
 
+    <p>
+        descrição: {{product.description}}
+    </p>
 
+    <p>
+        <a href="#"><button>ir direto para a compra</button></a>
+    </p>
 
+    <p>
+        especificações:
+    </p>
 
-    id: {{product.product_id}} <br>
-    nome: {{product.name}} <br>
-    descrição: {{product.description}} <br> <br>
-    especificação: <table>{{product.specifications|safe}}</table> <br>
-    preço: {{product.price}} <br>
+    <table>
+        <tbody>
+            {% for key, value in product.specifications.items()%}
+
+            <tr>
+                <td>{{key}}</td>
+                <td>{{value}}</td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table> <br>
+
+    <p>
+
+        <a href="#"><button>ir para a compra</button></a> <br><br>
+    </p>
+
 </body>
 
 <style>
-    *{
+    * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -24,11 +52,11 @@
         color: black;
     }
 
-    h1{
+    h1 {
         font-size: 2.5rem;
     }
 
-    .product-name{
+    .product-name {
         font-size: 1.3 rem;
     }
 </style>
