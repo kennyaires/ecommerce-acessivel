@@ -3,43 +3,46 @@
 </head>
 
 <body>
-    <h1>{{product.name}}</h1>
-    <p>
-        preço: {{product.price}}
-    </p>
-    <p>
-        <a href="#"><button>ir direto para a compra</button></a>
-    </p>
+    <div class="container">
 
-    <p>
-        descrição: {{product.description}}
-    </p>
-
-    <p>
-        <a href="#"><button>ir direto para a compra</button></a>
-    </p>
-
-    <p>
-        especificações:
-    </p>
-
-    <table>
-        <tbody>
-            {% for key, value in product.specifications.items()%}
-
-            <tr>
-                <td>{{key}}</td>
-                <td>{{value}}</td>
-            </tr>
-            {% endfor %}
-            
-        </tbody>
-    </table> <br>
-
-    <p>
-
-        <a href="#"><button>ir para a compra</button></a> <br><br>
-    </p>
+        <h1 style="text-align: center;">{{product.name}}</h1>
+        <p>
+            preço: {{product.price}}
+        </p>
+        <p>
+            <a href="#"><button>ir direto para a compra</button></a>
+        </p>
+    
+        <p>
+            descrição: {{product.description}}
+        </p>
+    
+        <p>
+            <a href="#"><button>ir direto para a compra</button></a>
+        </p>
+    
+        <p>
+            especificações:
+        </p>
+    
+        <table>
+            <tbody>
+                {% for key, value in product.specifications.items()%}
+    
+                <tr>
+                    <td>{{key}}</td>
+                    <td>{{value}}</td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table> <br>
+    
+        <p>
+    
+            <a href="#"><button>ir para a compra</button></a> <br><br>
+        </p>
+    </div>
 
 </body>
 
@@ -48,8 +51,8 @@
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        background-color: yellow;
-        color: black;
+        background-color: black;
+        color: yellow;
     }
 
     h1 {
@@ -58,5 +61,15 @@
 
     .product-name {
         font-size: 1.3 rem;
+    }
+
+
+    .container{
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 40px;
+    }
+    p{
+        margin-bottom: 15px;
     }
 </style>
