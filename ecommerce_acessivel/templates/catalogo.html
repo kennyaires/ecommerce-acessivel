@@ -3,30 +3,42 @@
 </head>
 
 <body>
-    <h1>Catálogo de móveis do site Americanas</h1>
 
+    
+    <h1 style="text-align: center;">Catálogo de móveis do site Americanas</h1>
+<div class="container">
 
+    
+    
+    
+    
+        {% for product in products %}
+        <div id="produto-{{loop.index}}" class="product">
+            <p class="product-name">
+    
+                Produto: {{product.description}} 
+            </p>
+            <a href="#produto-{{loop.index+1}}"><button>pular para o próximo produto</button> <br></a>
+    
+            <p>
 
+                {{product.rating}} 
+            </p>
+            <p>
 
+                {{product.price}} <br>
+            </p>
+            <p>
 
-    {% for product in products %}
-    <div id="produto-{{loop.index}}">
-        <p class="product-name">
+                {{product.installments}}
+            </p>
+            <a href="{{url_for('produto', product_id=product.product_id)}}"><button>mais informações desse produto</button></a>
+    
+            <br><br>
+        </div>
+        {% endfor %}
 
-            Produto: {{product.description}} 
-        </p>
-        <a href="#produto-{{loop.index+1}}"><button>pular para o próximo produto</button> <br></a>
-
-        {{product.product_id}} <br>
-        {{product.url}} <br>
-        {{product.rating}} <br>
-        {{product.price}} <br>
-        {{product.installments}} <br>
-        <a href="{{url_for('produto', product_id=product.product_id)}}"><button>mais informações desse produto</button></a>
-
-        <br><br>
-    </div>
-    {% endfor %}
+</div>
 
 </body>
 
@@ -35,8 +47,8 @@
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        background-color: yellow;
-        color: black;
+        background-color: black;
+        color: yellow;
     }
 
     h1{
@@ -44,6 +56,19 @@
     }
 
     .product-name{
-        font-size: 1.3 rem;
+        font-size: 1.5 rem;
+        font-weight: bold;
+    }
+
+    .product{
+        text-align: center;
+        margin-bottom: 30px;
+
+    }
+
+    .container{
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 40px;
     }
 </style>
